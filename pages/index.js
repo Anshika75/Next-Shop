@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Navbar from '../components/home/Navbar'
 export default function Home() {
   return (
     <>
@@ -9,9 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="title">
-          Welcome to NextShop
-        </h1>
+      <h1 className='text-red-500'>hi</h1>
+        <Navbar />
       </main>
     </>
   )
