@@ -1,2 +1,0 @@
-# Next-Shop
-# View
