@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Mandali&family=Ysabeau:wght@1;100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -20,12 +21,25 @@ a {
 }
 
 .primary {
-  background-color: #6617cb;
-  background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
+  background-color: #8F0074;
+  background-image: linear-gradient(315deg, #8F0074 0%, #F32A53 74%);
 }
 .primarytext{
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-color: #6617cb;
-  background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
+  background-color: #8F0074;
+  background-image: linear-gradient(315deg, #8F0074 0%, #F32A53 74%);
+}
+.primaryfont{
+  font-family: 'Mandali', sans-serif;
+}
+.headingfont{
+  font-family: 'Bruno Ace', cursive;
+}
+.secondaryfont{
+  font-family: 'Ysabeau', serif;
+}
+.hero{
+  background-image: url("http://codestar.xyz/demo/Affiliate/assets/img/body-bg.png");
+  background-size: cover;
 }
