@@ -1,5 +1,9 @@
 import { initializeApp, getApps } from "firebase/app";
 import {getFirestore, collection } from "firebase/firestore"
+// Import getAuth
+import { getAuth } from "firebase/auth";
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyA3K3rmsRzX-1Yf2Fb7hWCGkvjxhXIOGPg",
   authDomain: "next-authh.firebaseapp.com",
@@ -10,7 +14,7 @@ const firebaseConfig = {
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
-
 export default app;
 export const db = getFirestore(app);
+export const auth = getAuth(app);
 export const categoryRef = collection(db,"categories");
