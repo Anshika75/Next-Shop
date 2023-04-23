@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 export default function Navbar() {
   return (
     <div className='bg-[#fff] fixed top-0  left-0 z-20 shadow-md h-[60px] w-full text-white flex items-center px-10'>
