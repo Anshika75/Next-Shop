@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Navbar from '../components/home/Navbar'
 import Landing from '@/components/home/Landing'
 import Features from '@/components/home/Features'
+import Services from '@/components/home/Services'
 export default function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function Home() {
         <Navbar />
         <Landing/>
         <Features/>
+        <Services/>
       </main>
     </>
   )
