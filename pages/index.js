@@ -3,6 +3,7 @@ import Navbar from '../components/home/Navbar'
 import Landing from '@/components/home/Landing'
 import Features from '@/components/home/Features'
 import Services from '@/components/home/Services'
+import Contact from '@/components/home/Contact'
 export default function Home() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function Home() {
         <Landing/>
         <Features/>
         <Services/>
+        <Contact/>
       </main>
     </>
   )
