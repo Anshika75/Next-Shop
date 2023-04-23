@@ -27,7 +27,6 @@ export const AuthContextProvider = ({children}) => {
                 console.log(user)
             } else {
                 setUser({})
-
             }
             console.log(user)
             setLoading(false)

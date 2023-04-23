@@ -10,6 +10,16 @@ export const getCategories = async () => {
     });
     return categories;
 };
+// usage of orderBy
+export const getCategoriesOrderBy = async (field, order) => {
+    const categories = [];
+    const q = query(categoryRef, orderBy(field, order));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        categories.push({ id: doc.id, ...doc.data() });
+    });
+    return categories;
+};
 
 
 export const getCategoriesType = async () => {
