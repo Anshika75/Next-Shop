@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Landing() {
     return (
-        <div className="w-full md:h-[120vh] hero flex flex-col md:flex-row md:justify-center justify-between items-center pt-[25vmin] lg:pt-0">
+        <div className="w-full md:h-[120vh] hero flex flex-col md:flex-row md:justify-center justify-between items-center pt-[25vmin] lg:pt-0 bg-[#eee]">
             <div className="flex flex-col justify-center items-start md:w-1/2 pl-[10vmin]">
                 <h1 className="text-[#fff] text-[5vmin] md:text-[5.5vmin] lg:text-[7vmin] headingfont py-[1vmin]">Welcome to NextShop</h1>
                 <p className="text-[#fff] text-[3vmin] md:text-[2.5vmin] lg:text-[3vmin] secondaryfont w-[90%] py-[1vmin]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>

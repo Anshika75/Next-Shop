@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../components/home/Navbar'
 import Landing from '@/components/home/Landing'
+import Features from '@/components/home/Features'
 export default function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Home() {
       <main className='bg-[#eee] min-h-screen'>
         <Navbar />
         <Landing/>
+        <Features/>
       </main>
     </>
   )
