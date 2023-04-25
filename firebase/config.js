@@ -18,3 +18,4 @@ export default app;
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const categoryRef = collection(db,"categories");
+export const productRef = collection(db,"products");
