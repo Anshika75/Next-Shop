@@ -46,9 +46,7 @@ function product() {
                             <td className="border-2"><input placeholder="Product Price" value={newProduct.price} onChange={(e)=>setNewProduct({...newProduct,price:e.target.value})} /></td>
                             <td className="border-2"><input placeholder="Product Description" value={newProduct.description} onChange={(e)=>setNewProduct({...newProduct,description:e.target.value})} /></td>
                             <td className="border-2"><input placeholder="Product Category" value={newProduct.category} onChange={(e)=>setNewProduct({...newProduct,category:e.target.value})} /></td>
-                            <td className="border-2"><input placeholder="Product Image" value={newProduct.image} onChange={(e)=>setNewProduct({...newProduct,image:e.target.value})} /></td>
-
-                            
+                            <td className="border-2"><input placeholder="Product Image" value={newProduct.image} onChange={(e)=>setNewProduct({...newProduct,image:e.target.value})} /></td>    
                         </tr>
                     }
                     {
