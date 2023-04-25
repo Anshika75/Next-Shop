@@ -20,14 +20,14 @@ function Login() {
   }
   return (
     
-    <div className="bg-gray-100 h-screen flex justify-center items-center bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
-      <form className="bg-white flex flex-col items-center border p-8 rounded-md" onSubmit={handleSubmit}>
-        <h1 className="font-bold text-lg text-[#408080]">Login</h1>
-        <input className="px-3 py-2 my-2 focus:outline-[#408080]" type="email" placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)} required/>
-        <input className="px-3 py-2 shadow-lg my-2 focus:outline-[#408080]" type="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)} required/>
-        <button className="bg-primary text-white bg-[#408080] px-10 py-2 rounded-full hover:bg-[#408080bb] m-3" type="submit">login</button>
+    <div className="h-screen flex justify-center items-center primary">
+      <form className="bg-white flex flex-col items-center border p-[5vmin] rounded-md shadow-lg" onSubmit={handleSubmit}>
+        <h1 className="font-extrabold text-[4vmin] primaryfont text-[#651a57] my-[2vmin]">Login</h1>
+        <input className="px-[3vmin] py-[2vmin] my-[2vmin] bg-[#f2f2f2] transition-all hover:outline-[#651a57] focus:outline-[#651a57]" type="email" placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)} required/>
+        <input className="px-[3vmin] py-[2vmin] my-[2vmin] bg-[#f2f2f2] transition-all hover:outline-[#651a57] focus:outline-[#651a57]" type="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)} required/>
+        <button className="primary text-white primaryfont px-[4vmin] py-[1vmin] rounded-full hover:bg-[#651a57bb] m-[2vmin] transition-all hover:scale-90 hover:opacity-90" type="submit">Login</button>
 
-        <Link href={"/signup"}>Not Have A Account? <span className="text-[#408080]">Signup</span> </Link>
+        <Link className="primaryfont" href={"/signup"}>Don't have an account? <span className="text-[#651a57]">Signup</span> </Link>
       </form>
       {/* <button onClick={()=>GoogleAuth()}>Sign In With Google</button> */}
     </div>

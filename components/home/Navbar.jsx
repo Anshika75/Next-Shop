@@ -4,7 +4,7 @@ import React from 'react'
 export default function Navbar() {
   const {user} = useAuth();
   return (
-    <div className="bg-[#fff] fixed top-0  left-0 z-20 shadow-md h-[60px] w-full text-white flex items-center px-10">
+    <div className="bg-[#f6ebe8] fixed top-0  left-0 z-20 shadow-md h-[60px] w-full text-white flex items-center px-10">
       <div className="flex w-1/4">
         {/* <Image src='/logo.png' alt='logo' width={50} height={50} /> */}
         <p className="mx-[1.2vmin] cursor-pointer hover:font-semibold transition-all primarytext primaryfont text-[3vmin] font-medium">
