@@ -4,6 +4,7 @@ import Landing from '@/components/home/Landing'
 import Features from '@/components/home/Features'
 import Services from '@/components/home/Services'
 import Contact from '@/components/home/Contact'
+import Vendor from '@/components/home/Vendor'
 export default function Home() {
   return (
     <>
@@ -18,6 +19,7 @@ export default function Home() {
         <Landing/>
         <Features/>
         <Services/>
+        <Vendor/>
         <Contact/>
       </main>
     </>
