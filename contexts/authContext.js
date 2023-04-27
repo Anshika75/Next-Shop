@@ -1,6 +1,7 @@
 import { createContext,useContext, useEffect, useState} from "react"
 import { onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup ,updateProfile} from "firebase/auth"
 import {auth} from "@/firebase/config"
+import { createUser, getUser } from "@/firebase/user";
 import { useRouter } from "next/router";
 export const AuthContext = createContext({})
 const provider = new GoogleAuthProvider();
@@ -12,18 +13,21 @@ export const AuthContextProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (userr) => {
+        const unsubscribe = onAuthStateChanged(auth, async (userr) => {
             if (userr) {
+                let u = await getUser(userr.uid);
+                if(u==null) return {};
                 setUser({
                     uid:userr.uid,
                     email:userr.email,
                     displayName: userr.displayName,
                     photoURL: userr.photoURL,
-                    isVerified: userr.emailVerified
+                    isVerified: userr.emailVerified,
+                    role: u.role
                 })
                 localStorage.setItem("name",userr.displayName)
                 localStorage.setItem("uid",userr.uid)
-                localStorage.setItem("email",userr.email)
+                localStorage.setItem("email",userr.email);
                 console.log(user)
             } else {
                 setUser({})
@@ -33,26 +37,29 @@ export const AuthContextProvider = ({children}) => {
         });
         return ()=> unsubscribe();
     },[])
-    const signup = async (name,email, password) => {
-        const newUser = await createUserWithEmailAndPassword(auth, email, password);
+    const signup = async (formUser) => {
+        const newUser = await createUserWithEmailAndPassword(auth, formUser.email, formUser.password);
         if(newUser.user.email){
             updateProfile(
                 newUser.user,
                 {
-                    displayName: name,
+                    displayName: formUser.name,
                 }
             )
-            // await addUser({
-            //     email: email,
-            //     password: password,
-            //     displayName: name
-            // },newUser.user.uid);
+            await createUser({
+                email: formUser.email,
+                password: formUser.password,
+                displayName: formUser.name,
+                photoURL: newUser.user.photoURL,
+                uid: newUser.user.uid,
+                role: formUser.role
+            },newUser.user.uid);
         }
         
         router.push("/");
     }
-    const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+    const login = (formUser) => {
+        return signInWithEmailAndPassword(auth, formUser.email, formUser.password)
     }
     const logout = () => {
         return signOut(auth);

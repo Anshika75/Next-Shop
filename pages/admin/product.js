@@ -1,9 +1,11 @@
+import { useAuth } from "@/contexts/authContext";
 import { createProduct, getProducts } from "@/firebase/products";
 import { useEffect, useState } from "react"
 
 function product() {
     const [products, setProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({})
+    const [newProduct, setNewProduct] = useState({});
+    const {user} = useAuth();
     useEffect(() => {
             const fetchProducts = async () => {
                 const products = await getProducts();
@@ -19,7 +21,8 @@ function product() {
             newProduct.price,
             newProduct.description,
             newProduct.category,
-            newProduct.image
+            newProduct.image,
+            user
         )
     }
     return (

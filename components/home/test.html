@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    height: 50vh;
+    width: 60vw;
+    overflow: hidden ;
+    position: relative;
+}
+#slider{
+    height: 100%;
+    width: 400%;
+    display: flex;
+    margin-left: -100%;
+    transition: 0.5s;
+}
+.slides{
+    height: 100%;
+    width: 25%;
+
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+button{
+    position:absolute;
+    height: 8vmin;
+    width: 6vmin;
+    opacity: 0.5;
+    background-color: gray;
+    border: none;
+    font-size: 5vmin;
+    color: white;
+
+}
+button:hover{
+    opacity: 0.8;
+}
+#btn1{
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+#btn2{
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+    </style>
+
+</head>
+<body>
+    <div class="main">
+    <div id="container"><button id="btn1"><</button>
+        <div id="slider">
+            <div class="slides"><img src="https://picsum.photos/200/300" alt=""></div>
+            <div class="slides"><img src="https://picsum.photos/200/300" alt=""></div>
+            <div class="slides"><img src="https://picsum.photos/200/300" alt=""></div>
+            <div class="slides"><img src="../slider/coursel/assets/pexels-christian-heitz-842711.jpg" alt=""></div>
+
+        </div>
+        <button id="btn2">></button>
+    </div>
+</div>
+</body>
+<script>
+    const slider = document.querySelector('#slider');
+const slides = document.querySelectorAll('.slides');
+const prevBtn = document.querySelector('#btn1');
+const nextBtn = document.querySelector('#btn2');
+const slideWidth = slides[0].clientWidth;
+let slideIndex = 0;
+
+// set the initial position of the slider
+slider.style.marginLeft = `-${slideWidth * slideIndex}px`;
+
+// function to move the slider to the next slide
+function nextSlide() {
+  slideIndex++;
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+  slider.style.marginLeft = `-${slideWidth * slideIndex}px`;
+}
+
+// function to move the slider to the previous slide
+function prevSlide() {
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
+  slider.style.marginLeft = `-${slideWidth * slideIndex}px`;
+}
+
+// add event listeners to the buttons
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+</script>
+</html>

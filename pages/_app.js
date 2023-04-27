@@ -7,19 +7,25 @@ import { useEffect } from 'react';
 const noAuthRequired = ["/login", "/signup","/"];
 export default function App({Component, pageProps}) {
   const router = useRouter();
-
-  // return <h1>{router.pathname}</h1>
-  return (
-  <AuthContextProvider>
-    {
-      !noAuthRequired.includes(router.pathname) ? <ProtectedRoute><Component {...pageProps} /></ProtectedRoute> : <Component {...pageProps} />
-    }
-  </AuthContextProvider>
-  )
+  if(router.pathname.startsWith("/admin")){
+    return (
+      <AuthContextProvider>
+          <ProtectedRoute type="vendor"><Component {...pageProps} /></ProtectedRoute>
+      </AuthContextProvider>
+      )
+  }else{
+    return (
+      <AuthContextProvider>
+        {
+          !noAuthRequired.includes(router.pathname) ? <ProtectedRoute type='user'><Component {...pageProps} /></ProtectedRoute> : <Component {...pageProps} />
+        }
+      </AuthContextProvider>
+      )
+  }
 }
 
 
-function ProtectedRoute({children}) {
+function ProtectedRoute({children,type}) {
   const { user } = useAuth()
   const router = useRouter()
   useEffect(() => {
@@ -28,5 +34,5 @@ function ProtectedRoute({children}) {
       }
       console.log(user,"user")
   }, [user,router])
-  return <> {user.email?children:null} </>
+  return <> {user.email&&type==user.role?children:<h1>Not Allowed</h1>} </>
 }

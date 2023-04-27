@@ -20,13 +20,14 @@ export const getProductsByCategory = async (category) => {
     return products;
 }
 
-export const createProduct = async(name,price,description,category,image)=>{
+export const createProduct = async(name,price,description,category,image,user)=>{
     const docRef = await addDoc(productRef,{
         name,
         price,
         description,
         category,
-        image
+        image,
+        by:user
     });
     return docRef.id;
 }
