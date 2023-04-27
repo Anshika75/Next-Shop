@@ -3,7 +3,7 @@ import React from 'react'
 export default function Features() {
   return (
 
-    <section className='bg-[#F9FAFF] py-20 flex flex-row items-center justify-between flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin]'>
+    <section className='bg-[#F9FAFF] py-[15vmin] flex flex-row items-center justify-between flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin]'>
         <div className="flex flex-col items-center justify-center h-[45vmin] w-[45vmin] m-[3vmin] bg-[#fff] shadow-md py-[5vmin]">
             <i className="fa-solid fa-cart-shopping primarytext text-[7vmin] cursor-pointer opacity-80 transition-all hover:opacity-100"></i>
             <h1 className='text-[#651a57] text-[3vmin] font-bold py-[1vmin] headingfont'>Shopping</h1>

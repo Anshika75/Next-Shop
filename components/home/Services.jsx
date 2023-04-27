@@ -1,37 +1,37 @@
 import React from 'react'
 
 export default function Services() {
-    return (
-        <section className='bg-[#F9FAFF] flex flex-col items-center justify-evenly flex-wrap px-[5vmin] md:px-[10vmin]  lg:px-[15vmin] pb-[25vmin]'>
+    return (<section className='bg-[#F9FAFF] flex flex-col items-center justify-evenly flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin] pb-[15vmin]'>
             <h1 className='text-[#651a57] text-[7vmin] font-bold mt-[5vmin] headingfont'>Our Services</h1>
             <p className='text-[#333] text-[3vmin] secondaryfont primarytext w-[90%] text-center font-bold mb-[5vmin]'>A modern unique style</p>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2">
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+        
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 mb-[5vmin]">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-cart-flatbed-suitcase primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>All</h1>
                 </div>
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-shirt primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>Fashion</h1>
                 </div>
-                <div className="group hidden md:flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group hidden md:flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-110 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-headphones primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>Accessories</h1>
                 </div>
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-pen-ruler primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>Stationery</h1>
                 </div>
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-bolt primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>Electronics</h1>
                 </div>
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-couch primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>Furniture</h1>
                 </div>
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg">
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all hover:scale-105 shadow-md py-[5vmin] hoverbg">
                     <i className="fa-solid fa-square-plus primarytext text-[5vmin] cursor-pointer transition-all"></i>
                     <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>More</h1>
                 </div>
