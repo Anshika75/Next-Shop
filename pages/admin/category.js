@@ -13,6 +13,8 @@ function category() {
         console.log(categories)
     }, []);
 
+
+
     return (
       <div>
         <h1>Categories</h1>
@@ -32,6 +34,13 @@ function category() {
             <tr className="border-2">
               <td className="border-2"><input placeholder="Category Name" value={newCatName} onChange={(e)=>setNewCatName(e.target.value)} /></td>
               <td className="border-2"><input placeholder="Category Name" value={newCatType} onChange={(e)=>setNewCatType(e.target.value)} /></td>
+            </tr>
+          }
+          {
+            <tr className="border-2">
+              <td className="border-2 bg-purple-600" colSpan={2}><button onClick={
+                ()=>createCategory({name: newCatName,type: newCatType})
+              }>Create Category</button></td>
             </tr>
           }
           </tbody>
