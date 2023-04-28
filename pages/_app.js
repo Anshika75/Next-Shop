@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 
-const noAuthRequired = ["/login", "/signup","/"];
+const noAuthRequired = ["/login", "/signup","/","/logout"];
 export default function App({Component, pageProps}) {
   const router = useRouter();
   if(router.pathname.startsWith("/admin")){
