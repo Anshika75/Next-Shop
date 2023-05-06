@@ -34,5 +34,5 @@ function ProtectedRoute({children,type}) {
       }
       console.log(user,"user")
   }, [user,router])
-  return <> {user.email&&type==user.role?children:<h1>Not Allowed</h1>} </>
+  return <> {user.email&&(type=='user'||type==user.role)?children:<h1>Not Allowed</h1>} </>
 }

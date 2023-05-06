@@ -9,7 +9,15 @@ export const getProducts = async () => {
     });
     return products;
 }
-
+export const getProductById = async (id) =>{
+    const docRef = doc(productRef, id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        return { id: docSnap.id, ...docSnap.data() };
+    } else {
+        return null;
+    }
+}
 export const getProductsByCategory = async (category) => {
     const products = [];
     const q = query(productRef, where("category", "==", category));
