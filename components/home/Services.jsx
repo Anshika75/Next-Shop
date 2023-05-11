@@ -3,15 +3,7 @@ import React from 'react';
 import { getProducts } from '@/firebase/products';
 
 export default function Services() {
-    const [products, setProducts] = React.useState([]);
-    React.useEffect(() => {
-        getProducts().then((res) => {
-            setProducts(res);
-        })
-    }, [])
-    
-    
-    return (<section className='bg-[#F9FAFF] flex flex-col items-center justify-evenly flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin] pb-[15vmin]'>
+    return (<section className='bg-[#F9FAFF] flex flex-col items-center justify-evenly flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin] pb-[15vmin] shadow-md'>
             <h1 className='text-[#651a57] text-[7vmin] font-bold mt-[5vmin] headingfont'>Our Services</h1>
             <p className='text-[#333] text-[3vmin] secondaryfont primarytext w-[90%] text-center font-bold mb-[5vmin]'>A modern unique style</p>
 
