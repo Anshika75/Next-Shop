@@ -52,7 +52,12 @@ export const AuthContextProvider = ({children}) => {
                 displayName: formUser.name,
                 photoURL: newUser.user.photoURL,
                 uid: newUser.user.uid,
-                role: formUser.role
+                role: formUser.role,
+                isVerified: newUser.user.emailVerified,
+                location: {
+                    lat: formUser.lat,
+                    long: formUser.lng
+                }
             },newUser.user.uid);
         }
         

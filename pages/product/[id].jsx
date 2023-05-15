@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { getProductById } from "@/firebase/products";
 import { useEffect, useState } from "react";
+import { MapContainer } from "@/libs/GoogleApi";
 function SingleProduct() {
     const router = useRouter();
     const { id } = router.query;
@@ -25,6 +26,7 @@ function SingleProduct() {
                     </div>
                     ):"No Product Found"
             }
+            <MapContainer lat={product?.location?.lat} lon={product?.location?.lon} />
         </div>
     )
 }
