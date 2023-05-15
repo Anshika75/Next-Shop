@@ -1,15 +1,19 @@
 import { useAuth } from "@/contexts/authContext";
+import { getCategories } from "@/firebase/category";
 import { createProduct, getProducts } from "@/firebase/products";
 import { useEffect, useState } from "react"
 
 function product() {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [newProduct, setNewProduct] = useState({});
     const { user } = useAuth();
     useEffect(() => {
         const fetchProducts = async () => {
             const products = await getProducts();
+            const categories = await getCategories();
             setProducts(products);
+            setCategories(categories);
         };
         fetchProducts();
         console.log(products)
@@ -56,7 +60,17 @@ function product() {
                             <td className="border-2 p-[2vmin]"><input className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" placeholder="Product Name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} /></td>
                             <td className="border-2 p-[2vmin]"><input className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" placeholder="Product Price" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} /></td>
                             <td className="border-2 p-[2vmin]"><input className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" placeholder="Product Description" value={newProduct.description} onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })} /></td>
-                            <td className="border-2 p-[2vmin]"><input className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" placeholder="Product Category" value={newProduct.category} onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })} /></td>
+                            <td className="border-2 p-[2vmin]">{
+                                <select className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" value={newProduct.category} onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}>
+                                    <option value="" disabled selected hidden>Choose Category</option>
+                                    {categories.map((category, i) => {
+                                        return (
+                                            <option key={i} value={category.name}>{category.name}</option>
+                                        )
+                                    }
+                                    )}
+                                </select>
+                            }</td>
                             <td className="border-2 p-[2vmin]"><input className="bg-[#ffadbe] p-[1vmin] w-full text-center placeholder:text-center text-black placeholder:text-[#777] placeholder:secondaryfont" placeholder="Product Image" value={newProduct.image} onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })} /></td>
                         </tr>
                     }

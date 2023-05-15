@@ -27,7 +27,6 @@ function SingleProduct() {
             }
         </div>
     )
-
 }
 
 export default SingleProduct

@@ -46,7 +46,7 @@ export default function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 
             {products.map((product) => (
-                <div className="flex flex-col items-center justify-start pb-[2.5vmin] min-h-[60vmin] w-[60vmin] md:w-[40vmin] m-[3vmin] bg-[#fff] shadow-md">
+                <div className="flex flex-col items-center justify-start pb-[2.5vmin] min-h-[60vmin] w-[60vmin] md:w-[40vmin] m-[3vmin] bg-[#fff] shadow-md" key={product.id}>
                     <img className='w-full h-[70%]' src={product.image} alt="" />
                     <p className='text-[#333] text-[2.5vmin] secondaryfont w-[90%] py-[1vmin] text-center'>{product.name}</p>
                     <h1 className='text-[#651a57] text-[2vmin] font-bold headingfont'>Rs.99 | 3 &#9733; | 5km away</h1>
