@@ -18,18 +18,6 @@ export default function Navbar() {
         >
           Home
         </a>
-        <a
-          href=""
-          className="mx-[2.5vmin] text-[2.5vmin] cursor-pointer hover:font-semibold transition-all opacity-90 hover:opacity-100"
-        >
-          Products
-        </a>
-        <a
-          href=""
-          className="mx-[2.5vmin] text-[2.5vmin] cursor-pointer hover:font-semibold transition-all opacity-90 hover:opacity-100"
-        >
-          Vendors
-        </a>
         {
           user.role == "vendor"&& (
             <a
@@ -39,7 +27,7 @@ export default function Navbar() {
           <Link href={
             '/admin/product'
           }>
-            Add Product
+            Products
           </Link>
         </a>
           )
