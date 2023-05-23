@@ -14,7 +14,7 @@ export const AuthContextProvider = ({children}) => {
     const router = useRouter();
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (userr) => {
-            if (userr) {
+            if(userr){
                 let u = await getUser(userr.uid);
                 if(u==null) return {};
                 setUser({
@@ -24,21 +24,23 @@ export const AuthContextProvider = ({children}) => {
                     photoURL: userr.photoURL,
                     isVerified: userr.emailVerified,
                     role: u.role
-                })
-                localStorage.setItem("name",userr.displayName)
-                localStorage.setItem("uid",userr.uid)
+                });
+                localStorage.setItem("name",userr.displayName);
+                localStorage.setItem("uid",userr.uid);
                 localStorage.setItem("email",userr.email);
-                console.log(user)
+                console.log(user);
             } else {
-                setUser({})
+                setUser({});
             }
-            console.log(user)
-            setLoading(false)
+            console.log(user);
+            setLoading(false);
         });
         return ()=> unsubscribe();
     },[])
     const signup = async (formUser) => {
+        console.log("Signing up");
         const newUser = await createUserWithEmailAndPassword(auth, formUser.email, formUser.password);
+        console.log(formUser,"Created")
         if(newUser.user.email){
             updateProfile(
                 newUser.user,
@@ -53,7 +55,6 @@ export const AuthContextProvider = ({children}) => {
                 photoURL: newUser.user.photoURL,
                 uid: newUser.user.uid,
                 role: formUser.role,
-                isVerified: newUser.user.emailVerified,
                 location: {
                     lat: formUser.lat,
                     long: formUser.lng

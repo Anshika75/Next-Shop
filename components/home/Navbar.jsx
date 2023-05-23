@@ -30,7 +30,20 @@ export default function Navbar() {
         >
           Vendors
         </a>
-
+        {
+          user.role == "vendor"&& (
+            <a
+          href=""
+          className="mx-[2.5vmin] text-[2.5vmin] cursor-pointer hover:font-semibold transition-all opacity-90 hover:opacity-100"
+        >
+          <Link href={
+            '/admin/product'
+          }>
+            Add Product
+          </Link>
+        </a>
+          )
+        }
         <a
           href=""
           className="mx-[2.5vmin] text-[2.5vmin] cursor-pointer hover:font-semibold transition-all opacity-90 hover:opacity-100"

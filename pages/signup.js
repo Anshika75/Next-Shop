@@ -9,7 +9,8 @@ function SignUp() {
 
   const [userLoc, setUserLoc] = useState({});
 
-  const getLocation = () => {
+  const getLocation = (e) => {
+    e.preventDefault();
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
       console.log("D")
@@ -20,7 +21,7 @@ function SignUp() {
   const showPosition = (position) => {
     setUserLoc({
       lat: position.coords.latitude,
-      long: position.coords.longitude,
+      lng: position.coords.longitude,
     });
 
     console.log(userLoc);
@@ -52,14 +53,17 @@ function SignUp() {
         <input className="px-[3vmin] py-[2vmin] my-[2vmin] bg-[#f2f2f2] transition-all hover:outline-[#651a57] focus:outline-[#651a57]" type="password" placeholder="Confirm Password" value={formUser.confirmPassword} onChange={(e)=>setFormUser({...formUser,confirmPassword:e.target.value})} required/>
 
         <button className="primary text-white primaryfont px-[4vmin] py-[1vmin] rounded-full hover:bg-[#651a57bb] m-[2vmin] transition-all hover:scale-90 hover:opacity-90" onClick={getLocation}>Set Location</button>
-        <button className="primary text-white primaryfont px-[4vmin] py-[1vmin] rounded-full hover:bg-[#651a57bb] m-[2vmin] transition-all disabled:bg-[#351a5733] hover:opacity-90 w-full" disabled='{
-          !formUser.name ||
-          !formUser.email ||
-          !formUser.password ||
-          !formUser.confirmPassword ||
-          !userLoc.lat ||
-          !userLoc.long
-        }'>SignUp</button>
+        <button className="primary text-white primaryfont px-[4vmin] py-[1vmin] rounded-full hover:bg-[#651a57bb] m-[2vmin] transition-all disabled:bg-[#351a5733] hover:opacity-90 w-full" 
+        
+        // disabled='{
+        //   !formUser.name ||
+        //   !formUser.email ||
+        //   !formUser.password ||
+        //   !formUser.confirmPassword ||
+        //   !userLoc.lat ||
+        //   !userLoc.lng
+        // }' 
+        type="submit">SignUp</button>
         <Link className="primaryfont" href={"/login"}>Already have an account? <span className="text-[#651a57]">Login</span> </Link>
       </form>
     </div>

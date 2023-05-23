@@ -5,6 +5,7 @@ import { getDocs, query, where, collection, getDoc, doc, addDoc, setDoc } from "
 export const createUser = async (userObj, refId)=>{
     const userRef = doc(usersRef, refId);
     await setDoc(userRef, userObj);
+    console.log("User Created")
 }
 
 export const getUser = async (refId)=>{

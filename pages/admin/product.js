@@ -7,6 +7,7 @@ function product() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [newProduct, setNewProduct] = useState({});
+    const [changedProduct, setchangedProduct] = useState(2)
     const { user } = useAuth();
     useEffect(() => {
         const fetchProducts = async () => {
@@ -18,9 +19,11 @@ function product() {
         fetchProducts();
         console.log(products)
     }
-        , [])
-    function createNewProduct() {
-        createProduct(
+        ,[
+            changedProduct
+        ])
+    async function createNewProduct() {
+        await createProduct(
             newProduct.name,
             newProduct.price,
             newProduct.description,
@@ -28,6 +31,8 @@ function product() {
             newProduct.image,
             user
         )
+        setchangedProduct(changedProduct + 1)
+
     }
     return (
         <div className="bg-[#F9FAFF] flex flex-col items-center justify-evenly flex-wrap px-[5vmin] md:px-[10vmin] lg:px-[15vmin] pb-[15vmin] shadow-md">

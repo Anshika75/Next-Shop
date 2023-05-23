@@ -31,7 +31,11 @@ export default function Services() {
             </div>
             {
                 categories.map((category) => (
-                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg" onClick={()=>changeSelectedCat(category.name)}>
+                <div className="group flex flex-col items-center justify-center h-[20vmin] w-[20vmin] m-[3vmin] cursor-pointer transition-all shadow-md py-[5vmin] hoverbg" onClick={()=>changeSelectedCat(category.name)}
+                key={
+                    category.id
+                }
+                >
                 <i className="fa-solid fa-shirt primarytext text-[5vmin] cursor-pointer transition-all"></i>
                 <h1 className='text-[#651a57] group-hover:text-white text-[2vmin] font-bold py-[1vmin] headingfont'>
                 {

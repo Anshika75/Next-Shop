@@ -44,6 +44,7 @@ const GoogleMap = () => {
     <>
          <Head>
             <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHDlZeuOrKam8hwQCouMlwI-hNAqacPtM&callback=initMap" referrerpolicy="no-referrer" ></script>
+            
         </Head>
     <div
       id="map"
